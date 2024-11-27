@@ -1,0 +1,86 @@
+/*
+---GRID-AREA---
+Instructions
+All CSS declarations and media queries in this
+file should strictly target the "grid-area" div
+and its content in the index.html file.
+
+You're limited to the below stated:
+--------------------------
+Mandatory declaration
+¤ display: grid;                            | Only grid
+--------------------------
+Permitted media queries
+¤ @media screen and (min-width: 768px) {    |
+¤ @media screen and (min-width: 1024px) {   |
+--------------------------
+Permitted properties
+¤ display                                   | Only grid
+¤ font-weight                               |
+¤ grid-area                                 |
+¤ grid-gap                                  |
+¤ grid-template-areas                       |
+¤ grid-template-columns                     |
+¤ place-content                             |
+--------------------------
+
+Student CSS below the line
+-------------------------- */
+
+.grid-area {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "a b"
+        "c d"
+        "e f"
+        "g h"
+        "i j";
+}
+
+.grid-area div {
+    display: grid;
+    place-content: center;
+}
+
+.grid-area div:nth-child(1) p,
+.grid-area div:nth-child(4) p,
+.grid-area div:nth-child(6) p {
+    font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+    .grid-area {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "d e c"
+            "b a a"
+            "h f f"
+            "i f f"
+            "j j g";
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .grid-area {
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-areas: 
+            "c f f e"
+            "b f f g"
+            "h i a a"
+            "j d d d";
+    }
+}
+
+.grid-area div:nth-child(1) {grid-area: a;} /* YOU */
+.grid-area div:nth-child(2) {grid-area: b;} /* 2 */
+.grid-area div:nth-child(3) {grid-area: c;} /* 3 */
+.grid-area div:nth-child(4) {grid-area: d;} /* KNOW */
+.grid-area div:nth-child(5) {grid-area: e;} /* 5 */
+.grid-area div:nth-child(6) {grid-area: f;} /* GRID-AREA */
+.grid-area div:nth-child(7) {grid-area: g;} /* 7 */
+.grid-area div:nth-child(8) {grid-area: h;} /* 8 */
+.grid-area div:nth-child(9) {grid-area: i;} /* 9 */
+.grid-area div:nth-child(10) {grid-area: j;} /* 10 */
